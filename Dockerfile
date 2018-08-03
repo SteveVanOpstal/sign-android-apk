@@ -32,3 +32,4 @@ RUN mkdir /home/gradle/.gradle
 RUN chown -R gradle:gradle /home/gradle
 
 RUN apk --update add npm
+RUN apk add bash
