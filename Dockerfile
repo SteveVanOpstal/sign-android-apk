@@ -30,6 +30,7 @@ RUN addgroup -S -g 1100 gradle
 RUN adduser -D -S -G gradle -u 1100 -s /bin/ash gradle
 RUN mkdir /home/gradle/.gradle
 RUN chown -R gradle:gradle /home/gradle
+RUN export PATH=$PATH:/opt/gradle/bin
 
 RUN apk --update add npm
 RUN apk add bash
