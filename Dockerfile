@@ -12,13 +12,12 @@ RUN mkdir /opt
 RUN mkdir /opt/android
 RUN mv "tools" "/opt/android/tools"
 RUN rm tools.zip
-RUN ln -s "/opt/android/tools/bin/sdkmanager" /usr/bin/sdkmanager
+RUN cp -a "/opt/android/tools/bin/." /usr/bin/
 
 # android build-tools
 RUN yes | sdkmanager --licenses
 RUN sdkmanager "build-tools;27.0.3"
-RUN ln -s "/opt/android/build-tools/27.0.3/apksigner" /usr/bin/apksigner
-RUN ln -s "/opt/android/build-tools/27.0.3/zipalign" /usr/bin/zipalign
+RUN cp -a "/opt/android/build-tools/27.0.3/." /usr/bin/
 
 # gradle
 RUN wget -q -O gradle.zip "https://services.gradle.org/distributions/gradle-4.9-bin.zip"
