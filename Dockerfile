@@ -14,10 +14,14 @@ RUN mv "tools" "/opt/android/tools"
 RUN rm tools.zip
 RUN cp -a "/opt/android/tools/bin/." /usr/bin/
 
+RUN ls /user/bin/
+
 # android build-tools
 RUN yes | sdkmanager --licenses
 RUN sdkmanager "build-tools;27.0.3"
 RUN cp -a "/opt/android/build-tools/27.0.3/." /usr/bin/
+
+RUN ls /user/bin/
 
 # gradle
 RUN wget -q -O gradle.zip "https://services.gradle.org/distributions/gradle-4.9-bin.zip"
