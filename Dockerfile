@@ -14,6 +14,8 @@ RUN mv "tools" "/opt/android/tools"
 RUN rm tools.zip
 RUN export PATH=$PATH:~/opt/android/tools/bin
 
+RUN env
+
 # android build-tools
 RUN yes | sdkmanager --licenses
 RUN sdkmanager "build-tools;27.0.3"
