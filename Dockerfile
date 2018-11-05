@@ -12,12 +12,12 @@ RUN mkdir /opt
 RUN mkdir /opt/android
 RUN mv "tools" "/opt/android/tools"
 RUN rm tools.zip
-RUN export PATH=$PATH:/opt/android/tools/bin
+RUN export PATH=$PATH:~/opt/android/tools/bin
 
 # android build-tools
 RUN yes | sdkmanager --licenses
 RUN sdkmanager "build-tools;27.0.3"
-RUN export PATH=$PATH:/opt/android/build-tools/27.0.3
+RUN export PATH=$PATH:~/opt/android/build-tools/27.0.3
 
 # gradle
 RUN wget -q -O gradle.zip "https://services.gradle.org/distributions/gradle-4.9-bin.zip"
